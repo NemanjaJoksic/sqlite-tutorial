@@ -5,11 +5,11 @@
  */
 package sqlite.tutorial.dao;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import sqlite.tutorial.exception.DataAccessException;
 import sqlite.tutorial.model.User;
 
 /**
@@ -21,17 +21,17 @@ public class InMemoryUserDao implements UserDao {
     private Map<String, User> users = new HashMap<>();
     
     @Override
-    public List<User> getAllUsers() throws SQLException {
+    public List<User> getAllUsers() throws DataAccessException {
        return new LinkedList<>(users.values());
     }
 
     @Override
-    public User getUserByUsername(String username) throws Exception {
+    public User getUserByUsername(String username) throws DataAccessException {
         return users.get(username);
     }
 
     @Override
-    public void addUser(User user) throws Exception {
+    public void addUser(User user) throws DataAccessException {
         users.put(user.getUsername(), user);
     }
     

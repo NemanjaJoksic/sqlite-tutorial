@@ -7,7 +7,7 @@ package sqlite.tutorial.dao.util;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import sqlite.tutorial.DatabaseConnectionHolder;
+import sqlite.tutorial.dao.DatabaseConnectionHolder;
 
 /**
  *

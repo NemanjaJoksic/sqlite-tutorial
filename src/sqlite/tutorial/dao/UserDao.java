@@ -6,6 +6,7 @@
 package sqlite.tutorial.dao;
 
 import java.util.List;
+import sqlite.tutorial.exception.DataAccessException;
 import sqlite.tutorial.model.User;
 
 /**
@@ -14,12 +15,12 @@ import sqlite.tutorial.model.User;
  */
 public interface UserDao {
     
-    public static UserDao instance = new SQLiteUserDao();
+    public static final UserDao instance = new SQLiteUserDao();
     
-    public List<User> getAllUsers() throws Exception;
+    public List<User> getAllUsers() throws DataAccessException;
     
-    public User getUserByUsername(String username) throws Exception;
+    public User getUserByUsername(String username) throws DataAccessException;
     
-    public void addUser(User user) throws Exception;
+    public void addUser(User user) throws DataAccessException;
     
 }
